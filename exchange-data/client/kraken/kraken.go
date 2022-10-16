@@ -7,8 +7,6 @@ import (
 	"exchanges-data/exchange-data/utils"
 )
 
-const KRAKEN_URL = "https://api.kraken.com/0"
-
 type KrakenResponse struct {
 	Error error
 	data  *utils.Schema
@@ -19,7 +17,7 @@ type KrakenClient struct {
 	// Go's base HTTP client.
 	Client *http.Client
 	// Kraken's API URL
-	URL string
+	URL string `default:"https://api.kraken.com/0"`
 	*http.Header
 }
 
