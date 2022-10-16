@@ -8,9 +8,6 @@ import (
 	"net/http"
 )
 
-// A Schema is the value used in json.NewDecoder(...).Decode().
-type Schema interface{}
-
 // Request send an HTTP request whatever the method (GET, POST, etc.).
 //
 // A client is a Go's HTTP client.

@@ -2,10 +2,9 @@ package kraken
 
 import (
 	"net/http"
-	"time"
-
-	"exchanges-data/exchange-data/utils"
 )
+
+const KRAKEN_URL = "https://api.kraken.com/0"
 
 type KrakenResponse struct {
 	Error error
@@ -29,8 +28,4 @@ func New(url string, header *http.Header, client *http.Client) *KrakenClient {
 		client = &http.Client{}
 	}
 	return &KrakenClient{client, url, header}
-}
-
-func (k *KrakenClient) GetTrades(pair string, start, end time.Time) {
-
 }
